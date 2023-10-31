@@ -22,8 +22,10 @@ vim.call ('plug#begin', '~/.config/plugged')
   Plug 'nvim-tree/nvim-tree.lua'
   Plug 'andymass/vim-matchup'
   Plug 'pineapplegiant/spaceduck'
+  Plug 'rebelot/kanagawa.nvim'
 vim.call('plug#end')
 
 require('settings')
 require('plugins')
+require('colorscheme')
 require('autocomplete')
