@@ -24,3 +24,4 @@ set.autoindent = true
 set.smartindent = true
 set.breakindentopt = 'shift:2'
 
+vim.g.matchup_matchparen_offscreen = { method = 'popup' }

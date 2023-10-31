@@ -1,70 +1,28 @@
--- NVIM LINT
-require'lint'.linters_by_ft = {
-  javascript = { 'eslint' }
-}
+local Plug = vim.fn['plug#']
 
-vim.api.nvim_create_autocmd({ "cursorHold" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
+vim.call ('plug#begin', '~/.config/plugged')
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-omni'
 
--- NVIM TREE
-require'nvim-tree'.setup {
-  sort_by = 'case_sensitive',
-  view = { width = 25 },
-  renderer = { group_empty = true },
-  filters = { dotfiles = true }
-}
-vim.cmd [[nmap <C-b> :NvimTreeFindFileToggle<CR>]]
+  Plug 'dcampos/cmp-snippy'
+  Plug 'dcampos/nvim-snippy'
+  Plug 'honza/vim-snippets'
 
--- VIM MATCHUP
-vim.g.matchup_matchparen_offscreen = { method = 'popup' }
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'nvim-tree/nvim-web-devicons'
+  Plug 'alvarosevilla95/luatab.nvim'
 
--- LUA LINE
-require'lualine'.setup {
-  options = {
-    icons_enabled = true,
-    theme = 'ayu_mirage',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 100,
-      tabline = 100,
-      winbar = 100,
-    }
-  },
-  sections = {
-    lualine_a = {},
-    lualine_b = {'filename'},
-    lualine_c = {'branch'},
-    lualine_x = {},
-    lualine_y = {'diagnostics', 'progress'},
-    lualine_z = {}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
-}
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'tpope/vim-commentary'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'tpope/vim-fugitive'
+  Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'andymass/vim-matchup'
+  Plug 'mfussenegger/nvim-lint'
 
--- Lua Tab
-require('luatab').setup{
-  modified = function() return '' end,
-  windowCount = function() return '' end,
-}
+  Plug 'pineapplegiant/spaceduck'
+  Plug 'rebelot/kanagawa.nvim'
+vim.call('plug#end')
+
