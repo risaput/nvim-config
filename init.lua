@@ -13,6 +13,7 @@ vim.call ('plug#begin', '~/.config/plugged')
   Plug 'mfussenegger/nvim-lint'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'nvim-tree/nvim-web-devicons'
+  Plug 'alvarosevilla95/luatab.nvim'
 
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
@@ -26,5 +27,3 @@ vim.call('plug#end')
 require('settings')
 require('plugins')
 require('autocomplete')
-
-vim.cmd [[nmap <C-b> :NvimTreeFindFileToggle<CR>]]

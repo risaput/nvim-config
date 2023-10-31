@@ -17,6 +17,7 @@ require'nvim-tree'.setup {
   renderer = { group_empty = true },
   filters = { dotfiles = true }
 }
+vim.cmd [[nmap <C-b> :NvimTreeFindFileToggle<CR>]]
 
 -- VIM MATCHUP
 vim.g.matchup_matchparen_offscreen = { method = 'popup' }
@@ -61,4 +62,10 @@ require'lualine'.setup {
   winbar = {},
   inactive_winbar = {},
   extensions = {}
+}
+
+-- Lua Tab
+require('luatab').setup{
+  modified = function() return '' end,
+  windowCount = function() return '' end,
 }
