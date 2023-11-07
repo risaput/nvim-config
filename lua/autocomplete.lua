@@ -29,11 +29,11 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
     sources = cmp.config.sources({
-        { name = 'omni', keyword_length = 3, max_item_count = 10 },
+        { name = 'omni', keyword_length = 3, max_item_count = 5 },
         { name = 'path' },
       }, 
       {
-        { name = 'buffer', keyword_length = 3 },
+        { name = 'buffer', keyword_length = 5 },
         { name = 'snippy', keyword_length = 2},
       })
   })
